@@ -12,4 +12,4 @@ A branch is essentially a 'department' of the main database in which developers 
 A commit is the creation of a save point of a file. A good commit message clearly describes the specific modifications made to the file since the last commit.
 
 * What is a merge conflict?
-A merge conflict is when git reports an error while attempting to merge or integrate one branch into another. This can occur when the same file on two branches have conflicting modifications. For example, if both files have changes to the same line, this might cause a merge conflict and the user will have to resolve this conflict before completing a merge.
+A merge conflict is when git reports an error while attempting to merge or integrate one branch into another. This can occur when the same file on two branches have conflicting modifications. For example, if both files have changes to the same line, this might cause a merge conflict and the user will resolve this conflict before completing a merge.
