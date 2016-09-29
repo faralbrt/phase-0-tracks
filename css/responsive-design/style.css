@@ -1,6 +1,6 @@
 body {
 max-width: 960px;
-min-width: 430px;
+min-width: 300px;
 margin: auto;
 }
 #external-links {
@@ -8,10 +8,12 @@ width: 20%;
 display: inline-block;
 vertical-align: top;
 padding-right: 5%;
+padding-left: 5%;
 }
 main {
-width: 60%;
+width: 50%;
 display: inline-block;
+padding: 5%;
 }
 blockquote {
 border-left: 5px solid blue;
@@ -48,16 +50,18 @@ text-align: right;
 }
 */
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   h1  {
     font-size: 15px;
 
   }
   #external-links {
-    width:100%;
+    width:95%;
+    margin: auto;
   }
   main {
-    width:100%;
+    width:95%;
+    margin: auto;
   }
 }
 
