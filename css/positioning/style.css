@@ -1,20 +1,27 @@
 #wrapper {
   position: relative;
+  width: 340px;
+  height: 513px;
+  margin: auto;
+  padding: 10px;
 }
 #octopus {
+  display: block;
+  margin-top: 25px;
+  margin: auto;
   position: absolute;
-  top: 0px;
-  left: 0px;
-  margin-left: 50%;
-  margin-top: 5%;
+  top: 80px;
+  left: 35px;
 }
 #hat {
-  position: fixed;
-  top: 0px;
-  left: 47%;
+  display: block;
+  margin: auto;
+  position: absolute;
 }
 #glasses {
+  display: block;
+  margin: auto;
   position: absolute;
-  top: 150px;
-  left: 54%;
+  top: 180px;
+  left: 76px;
 }
