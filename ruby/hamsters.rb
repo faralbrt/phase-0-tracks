@@ -29,12 +29,12 @@ hamsterAge = gets.chomp
 if hamsterAge == ""
   hamsterAge = nil
 else 
-  hamsterAge = hamsterAge
+  hamsterAge = hamsterAge.to_i
 end
-hamsterAge = hamsterAge.to_i
 
-puts "your hamster's name is #{hamsterName}"
+
+p "your hamster's name is #{hamsterName}"
 puts "your hamster requires a volume level of #{hamsterVolumeLevel}"
 puts "your hamster is colored #{furColor}"
-puts "Candidacy: #{hamsterCandidate}"
-puts "Your hamster might be #{hamsterAge}"
+p hamsterCandidate
+p hamsterAge
