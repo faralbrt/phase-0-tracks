@@ -2,42 +2,41 @@ Algorithm for robot using elevator
 
 (Assuming the robot is going up)
 
-set current_floor=1
-let desired_floor= value of the floor the robot wants to go to
-Align itself in a position equidistant to both sides of door frame
+-set current_floor=1
+-let desired_floor= value of the floor the robot wants to go to
+-Align itself in a position equidistant to both sides of door frame
+-Until it is at a point in the center of the elevator
+	Until it senses the flash of a green upward arrow and elevator door slides open
+		Walk in a straight path forward
 
-1. when senses the flash of a green upward arrow and elevator door slides open
-	Until it is at a point in the center of the elevator
-		- Walk in a straight path forward
+-Determine a value for the variable desired_floor
 
-2. Determine a value for the variable desired_floor
-
-3. Find the corresponding button for desired_floor and press button
-	move finger to position at the most bottom left button on the "floor button Grid"
-	let finger_position= current finger position on the "floor button grid"
-	set finger_position= 1
+-move finger to position at the most bottom left button on the "floor button Grid"
+-let finger_position= current finger position on the "floor button grid"
+-set finger_position= 1
 	
-	Until finger_position is equal to desired_floor
-		If a button is detected to the right of finger_position
-			Move finger_positon one button to the right
-			add 1 to the value of finger_position
-		Otherwise,
-			Until a button is detected to the right of finger_position
-				move one button up to the next row
-				move finger to the left-most position
-				add one to finger_position
+-Until finger_position is equal to desired_floor
+	-If a button is detected to the right of finger_position
+		-Move finger_positon one button to the right
+		-add 1 to the value of finger_position
+	-Otherwise,
+		-Until a button is detected to the right of finger_position
+			-move one button up to the next row
+			-move finger to the left-most position
+			-add one to finger_position
 
-	Until the button  with the value of finger_position has a flash of light around
-		Move finger straight into the button and pull finger back
+-Until the button  with the value of finger_position has a flash of light around
+	-Move finger straight into the button and pull finger back
 
-4. Determine when to exit the elevator
-Let floor_display= Value of floor in the LED display in the elevator
-	Until the current_floor is equal to desired_floor
-		Scan the floor_display in the elevator
-			If floor_display is not equal to current_floor
-				Set current_floor equal to floor_display
-	Until the elevator doors are 5 feet behind
-		Walk in a straight path away from the back wall of the elevator
+"Determine when to exit the elevator"
+-Let floor_display= Value of floor in the LED display in the elevator
+-Until the current_floor is equal to desired_floor
+	-Scan the floor_display in the elevator
+		-If floor_display is not equal to current_floor
+			-Set current_floor equal to floor_display
+
+-Until the elevator doors are 5 feet behind
+	-Walk in a straight path away from the back wall of the elevator
 
 
 	
