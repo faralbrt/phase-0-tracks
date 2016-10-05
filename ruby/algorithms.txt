@@ -1,4 +1,4 @@
-Algorithm for robot using elevator
+1. Algorithm for robot using elevator
 
 (Assuming the robot is going up)
 
@@ -38,6 +38,22 @@ Algorithm for robot using elevator
 -Until the elevator doors are 5 feet behind
 	-Walk in a straight path away from the back wall of the elevator
 
+2. Eating cereal
 
+- Wait until a bowl full of cereal and a spoon are in front of you
+- Pick up the spoon
+-Until bowl is empty
+	-Until spoon is full of cereal
+		-position spoon in a line perpendicular to the bowl
+		-lower spoon into the bowl
+		-lift spoon up and away from the bowl
+	-Bring spoon close to mouth
+	-Open mouth
+	-put the spoon inside your mouth
+	-Until the spoon is empty
+		-tilt spoon up
+	-pull spoon out of mouth
+-you are done
+-Place bowl and spoon in sink
 	
 				
