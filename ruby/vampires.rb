@@ -57,3 +57,4 @@ until number_of_loops == number_of_employees
   p result
   number_of_loops +=1
 end
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
