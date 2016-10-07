@@ -1,0 +1,39 @@
+.column-1 {
+  width: 40% ;
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid grey;
+  padding: 15px;
+  background-color: steelblue;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  
+}
+.column-2 {
+  width : 40% ;
+  display: inline-block ;
+  vertical-align: top;
+  margin-left: 40px;
+  border: 1px solid grey;
+  padding: 15px;
+  background-color:steelblue;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+footer {
+  background-image: url("https://avatars0.githubusercontent.com/u/583231?v=3&s=466");
+  height:100px;
+}
+
+a {
+  text-decoration: none;
+  color:white;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+summary {
+  display:block;
+  background-color:lightgrey;
+}
