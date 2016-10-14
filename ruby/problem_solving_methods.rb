@@ -18,7 +18,7 @@ end
 puts "Release 0"
 puts '--------------'
 array = [1,2,3,4,5,6]
-p search_arr(array, 15)
+p search_arr(array, 3)
 p '====================='
 
 
@@ -73,3 +73,4 @@ test = fib(100).last == 218922995834555169026
 puts 'Test Results:'
 p test        
 
+# RELEASE 2
