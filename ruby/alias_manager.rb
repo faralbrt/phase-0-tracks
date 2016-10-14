@@ -61,3 +61,20 @@ def create_alias(name)
 end
 
 # DRIVER CODE
+alias_hash = {}
+loop do
+  puts "Enter the full_name for alias creation (type 'quit' when done)"
+  user_input = gets.chomp
+break if user_input == 'quit'
+  output_alias = create_alias(user_input)
+  alias_hash[user_input] = output_alias
+  puts output_alias
+end
+puts 'Here is the list of aliases:'
+puts '----------------------------'
+alias_hash.each do | real_name, value |
+  puts "=================="
+  puts "Name: #{real_name}"
+  puts "Alias: #{value}"
+end
+puts '-----------------------------'
