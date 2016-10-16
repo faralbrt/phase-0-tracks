@@ -77,7 +77,7 @@ p test
 # GOAL - USE BUBBLE SORTING ALGORITHM TO CREATE A SORTING METHOD WHICH SORTS AN ARRAY
 
 # PLAN
-# - define a sorting method called sort_array
+# - define a sorting method called bub_sort
 #   - let sort_length = the length of the array to sort(how many items it will sort)
 #   - let arr_position = 0 (the first position)
 #   - let next_position = arr_position + 1 (the neighbouring position)
@@ -88,4 +88,22 @@ p test
 #       - Swap items
 #       - add one to arr_position(to start over at the next pair)
 #     - subtract one from the sort_length(the last one is in its final place, so it need not be sorted)
+
+def bub_sort(array)
+  sort_length = array.length
+  until sort_length == 1
+    arr_position = 0
+    next_position = arr_position + 1
+    left_item = array[arr_position]
+    right_item = array[next_position]
+    while next_position < sort_length
+      if left_item > right_item
+        left_item,right_item = right_item,left_item
+      end
+      arr_position += 1
+      next_position = arr_position + 1
+    end
+    sort_length = sort_length - 1
+  end
+end
 
