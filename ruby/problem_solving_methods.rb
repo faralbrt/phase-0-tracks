@@ -74,3 +74,18 @@ puts 'Test Results:'
 p test        
 
 # RELEASE 2
+# GOAL - USE BUBBLE SORTING ALGORITHM TO CREATE A SORTING METHOD WHICH SORTS AN ARRAY
+
+# PLAN
+# - define a sorting method called sort_array
+#   - let sort_length = the length of the array to sort(how many items it will sort)
+#   - let arr_position = 0 (the first position)
+#   - let next_position = arr_position + 1 (the neighbouring position)
+#   - Until the sort_length is equal to 1 (meaning, no more items to sort)
+#     - arr_position = 0 (this resets to the first position for each pass)
+#     - While the next_position is less than the sort_length
+#       - If array at arr_position is greater than the array at next_position
+#       - Swap items
+#       - add one to arr_position(to start over at the next pair)
+#     - subtract one from the sort_length(the last one is in its final place, so it need not be sorted)
+
