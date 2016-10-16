@@ -94,16 +94,23 @@ def bub_sort(array)
   until sort_length == 1
     arr_position = 0
     next_position = arr_position + 1
-    left_item = array[arr_position]
-    right_item = array[next_position]
+    array[arr_position]
+    array[next_position]
     while next_position < sort_length
-      if left_item > right_item
-        left_item,right_item = right_item,left_item
+      if array[arr_position] > array[next_position]
+        array[arr_position],array[next_position] = array[next_position],array[arr_position]
       end
       arr_position += 1
       next_position = arr_position + 1
     end
     sort_length = sort_length - 1
   end
+  array
 end
 
+
+# DRIVER CODE
+puts "============================"
+puts "RELEASE 2"
+test_array = [5,7,1,1,2,3,5,4,10,2,75,34]
+p bub_sort(test_array)
