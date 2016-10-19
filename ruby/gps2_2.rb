@@ -88,7 +88,7 @@ end
 def update_qty(item, quantity)
   if $grocery_list[item]
     $grocery_list[item] = quantity
-    print_list
+    print_item(item)
   else
     puts "Sorry this item does not exist"
   end
@@ -101,7 +101,10 @@ def print_list
   end
 end
 
-
+# PRINT ITEM AND QUANTITY- (FOR UPDATE QTY METHOD)
+def print_item(item)
+  puts "#{item}: #{$grocery_list[item]}"
+end
 
 
 # TEST
@@ -127,3 +130,5 @@ update_qty(test_item_upd, 5)
 puts "--------------------------------"
 puts "print the list nicely"
 print_list
+
+# REFLECTON:
