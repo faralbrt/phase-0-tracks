@@ -22,6 +22,10 @@ class Puppy
   	puts "*plays dead*"
   end
 
+  def initialize
+  	puts "Initializing new puppy instance..."
+  end
+
 end
 
 # DRIVER CODE
