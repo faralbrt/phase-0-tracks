@@ -132,3 +132,24 @@ puts "print the list nicely"
 print_list
 
 # REFLECTON:
+# What did you learn about pseudocode from working on this challenge?
+  # I learned that writing clear and actionable pseudocode makes writing the code way easier.
+
+# What are the tradeoffs of using arrays and hashes for this challenge?
+  # If we use arrays then we would have to call upon the items using index numbers, and we have to store
+  # sub-array pairs within the master array. If we use a hash, we can refer to items using keys,
+  # and each key has to be unique which is useful for updating quantities in this challenge.
+
+# What does a method return?
+  # A method returns the last line of actionable code that is written. (excluding an 'end' declaration)
+
+# What kind of things can you pass into methods as arguments?
+  # We can pass variables and other methods. This would subsequently include strings, integers, booleans,
+  # hashes, arrays and more.
+
+# How can you pass information between methods?
+  # We can nest one method within another
+
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+  # In this challenge, I solidified my understanding of scopes and implicit returns. I would like to learn
+  # more about the types of arguments one can pass through an if statement.
