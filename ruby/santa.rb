@@ -1,8 +1,8 @@
 # LOGIC
 class Santa
 
-  attr_reader :age, :ethnicity
-  attr_accessor :gender
+  attr_reader :ethnicity
+  attr_accessor :age, :gender
 
   def initialize(gender, ethnicity)
     puts "Initializing Santa instance..."
@@ -32,22 +32,27 @@ class Santa
 end
 
 # DRIVER CODE
+
 # santa_1 = Santa.new
 # santa_1.speak
 # santa_1.eat_milk_and_cookies("KitKat")
 
 
-santa_1 = Santa.new("agender", "black")
-Santa.new("female", "Latino")
-Santa.new("bigender", "white")
-Santa.new("male", "Japanese")
-Santa.new("female", "prefer not to say")
-Santa.new("gender fluid", "Mystical Creature (unicorn)")
-Santa.new("N/A", "N/A")
+# santa_1 = Santa.new("agender", "black")
 
-santa_1.celebrate_birthday
-santa_1.get_mad_at('Dasher')
-santa_1.gender = 'male'
-p santa_1.gender
-p santa_1.age
-p santa_1.ethnicity
+# santa_1.celebrate_birthday
+# santa_1.get_mad_at('Dasher')
+# santa_1.gender = 'male'
+# p santa_1.gender
+# p santa_1.age
+# p santa_1.ethnicity
+
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+1000.times do
+  santa_instance = Santa.new(example_genders.sample, example_ethnicities.sample)
+  santa_instance.age = rand(140)
+  puts "Age: #{santa_instance.age}"
+  puts "Ethnicity: #{santa_instance.ethnicity}"
+  puts "Gender: #{santa_instance.gender}"
+end
