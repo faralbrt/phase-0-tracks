@@ -1,6 +1,9 @@
 # LOGIC
 class Santa
 
+  attr_reader :age, :ethnicity
+  attr_accessor :gender
+
   def initialize(gender, ethnicity)
     puts "Initializing Santa instance..."
     @gender = gender
@@ -26,18 +29,6 @@ class Santa
     p @reindeer_ranking
   end
 
-  def gender=(new_gender)
-    @gender = new_gender
-  end
-
-  def age
-    @age
-  end
-
-  def ethnicity
-    @ethnicity
-  end
-
 end
 
 # DRIVER CODE
@@ -57,6 +48,6 @@ Santa.new("N/A", "N/A")
 santa_1.celebrate_birthday
 santa_1.get_mad_at('Dasher')
 santa_1.gender = 'male'
-p santa_1
+p santa_1.gender
 p santa_1.age
 p santa_1.ethnicity
