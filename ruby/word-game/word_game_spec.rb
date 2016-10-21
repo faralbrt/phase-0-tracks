@@ -17,16 +17,12 @@ describe WordGame do
     expect(game.match('z')).to eq '_ _ _ _ '
   end
 
-describe WordGame do
-  let(:game) { WordGame.new('word') }
-
 # guess limit feature
   it "limits the amount of guesses" do
-    expect(game.guess_count)
+    expect(game.limit_reached).to eq false
     end
 
 end
-
 
 # repeated guesses dont count
 # ending message

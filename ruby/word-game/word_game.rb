@@ -100,5 +100,75 @@ class WordGame
     return @word_guessed
   end
 
+  def increment_count?(guess)
+    if @guesses.include?(guess)
+      puts 'You already guessed that!'
+      return false
+    else
+      @guess_count += 1
+      return true
+    end
+  end
+
+  def guesses_remaining
+    @guess_limit - @guess_count
+  end
+
+  def limit_reached
+    if @guess_count >= @guess_limit
+      return true
+    else
+      return false
+    end
+  end
+
+  def ending_message
+    if @win
+      'Congratulations! You won!!!'
+    else
+      'You have reached the limit of guesses, you lost :( :('
+    end
+  end
 
 end
+
+# DRIVER CODE
+
+puts 'First player: Please type in the secret word(make sure nobody is looking)'
+game = WordGame.new(gets.chomp)
+puts "======================="
+puts "======================="
+puts "======================="
+puts "======================="
+puts "======================="
+puts "======================="
+puts "======================="
+puts "======================="
+puts "======================="
+puts "======================="
+puts "======================="
+puts "======================="
+puts "======================="
+puts "======================="
+puts "======================="
+puts "======================="
+puts "======================="
+puts "======================="
+puts "======================="
+puts "======================="
+puts 'Ok ready to go!'
+
+until game.limit_reached || game.win
+  puts game.word_guessed
+  guesses_remaining = game.guesses_remaining
+  puts "You have #{guesses_remaining} guesses remaining, guess a letter or word"
+  guess = gets.chomp
+  game.increment_count?(guess)
+  game.match(guess)
+  if game.word_guessed == game.secret_word
+    game.win = true
+  end
+  puts "==============================="
+end
+
+puts game.ending_message
