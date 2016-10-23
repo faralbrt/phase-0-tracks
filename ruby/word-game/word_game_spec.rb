@@ -34,4 +34,10 @@ describe WordGame do
     game.win = false
     expect(game.ending_message).to eq 'You have reached the limit of guesses, you lost :( :('
     end
+
+# handles instances where a word has two of the same letters
+  it "handles more than one of the same letter in a word" do
+    game1 = WordGame.new('carrot')
+    expect(game1.match('r')).to eq '_ _ r r _ _ '
+  end
 end

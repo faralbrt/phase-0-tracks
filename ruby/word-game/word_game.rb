@@ -86,7 +86,7 @@ class WordGame
   def match(guess)
     if guess == @secret_word
       @word_guessed = @secret_word
-    elsif @secret_letters.include?(guess)
+    elsif @secret_letters.count(guess) == 1
       letter_index = @secret_letters.index(guess)
       @guesses << guess
       if letter_index != 0
@@ -94,10 +94,27 @@ class WordGame
       else
         @word_guessed[letter_index] = guess
       end
+    elsif @secret_letters.count(guess) > 1
+      mult_letters(guess)
     else
       @guesses << guess
     end
     return @word_guessed
+  end
+
+  def mult_letters(guess)
+    @guesses << guess
+    letter_index = 0
+    @secret_letters.each do |secret_letter|
+      if secret_letter == guess
+        if letter_index != 0
+        @word_guessed[letter_index * 2] = guess
+        else
+        @word_guessed[letter_index] = guess
+        end
+      end
+      letter_index += 1
+    end
   end
 
   def increment_count?(guess)
