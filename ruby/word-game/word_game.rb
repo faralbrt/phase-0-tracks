@@ -70,7 +70,7 @@
 
 class WordGame
   attr_reader :word_guessed
-  attr_accessor :secret_word , :win
+  attr_accessor :secret_word , :win, :guess_count, :guesses
 
   def initialize(secret_word)
     puts "Welcome to the word game...Initializing"
@@ -134,41 +134,22 @@ end
 
 # DRIVER CODE
 
-puts 'First player: Please type in the secret word(make sure nobody is looking)'
-game = WordGame.new(gets.chomp)
-puts "======================="
-puts "======================="
-puts "======================="
-puts "======================="
-puts "======================="
-puts "======================="
-puts "======================="
-puts "======================="
-puts "======================="
-puts "======================="
-puts "======================="
-puts "======================="
-puts "======================="
-puts "======================="
-puts "======================="
-puts "======================="
-puts "======================="
-puts "======================="
-puts "======================="
-puts "======================="
-puts 'Ok ready to go!'
+# puts 'First player: Please type in the secret word(make sure nobody is looking)'
+# game = WordGame.new(gets.chomp)
+# puts "=======================" * 1000
+# puts 'Ok ready to go!'
 
-until game.limit_reached || game.win
-  puts game.word_guessed
-  guesses_remaining = game.guesses_remaining
-  puts "You have #{guesses_remaining} guesses remaining, guess a letter or word"
-  guess = gets.chomp
-  game.increment_count?(guess)
-  game.match(guess)
-  if game.word_guessed == game.secret_word
-    game.win = true
-  end
-  puts "==============================="
-end
+# until game.limit_reached || game.win
+#   puts game.word_guessed
+#   guesses_remaining = game.guesses_remaining
+#   puts "You have #{guesses_remaining} guesses remaining, guess a letter or word"
+#   guess = gets.chomp
+#   game.increment_count?(guess)
+#   game.match(guess)
+#   if game.word_guessed == game.secret_word
+#     game.win = true
+#   end
+#   puts "==============================="
+# end
 
-puts game.ending_message
+# puts game.ending_message

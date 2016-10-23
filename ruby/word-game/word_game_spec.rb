@@ -19,10 +19,19 @@ describe WordGame do
 
 # guess limit feature
   it "limits the amount of guesses" do
-    expect(game.limit_reached).to eq false
+    game.guess_count = 9
+    expect(game.limit_reached).to eq true
     end
 
-end
-
 # repeated guesses dont count
+  it "makes sure repeated guesses don't count" do
+    game.guesses = ['five']
+    expect(game.increment_count?('five')).to eq false
+    end
+
 # ending message
+  it "prints the correct ending message" do
+    game.win = false
+    expect(game.ending_message).to eq 'You have reached the limit of guesses, you lost :( :('
+    end
+end
