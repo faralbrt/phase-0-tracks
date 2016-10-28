@@ -26,6 +26,26 @@ output: true if there's a match, false if there is no match
     - break the loop
 - return foundMatch
 
+____________________________________
+
+Release 2
+
+Goal: generate an array of strings from 1-10 characters with a user defined length
+Input: an integer
+Output: an array of strings with the length of that integer
+
+- declare a method genArray that takes in an number
+  - for that number of times
+      - push a randomString onto the array
+  - return the array
+
+- declare a method randomString that takes in a number(max number of chars)
+  - let string equal the final random string(initializes as "")
+  - let alphabet = "abcdefghijklmnopqrstuvwxyz"
+  - for a random number of times(1-10)
+    - add a character at a random index(1-26) to the string
+  - return string
+
 */
 
 
@@ -53,6 +73,22 @@ var hasMatch = function(object1, object2) {
   return foundMatch;
 };
 
+var randomString = function(maxNum) {
+  var string = "";
+  var alphabet = "abcdefghijklmnopqrstuvwxyz";
+  for (var i = 0; i <= (Math.floor(Math.random() * maxNum)); i ++) {
+    string += alphabet[Math.floor(Math.random() * alphabet.length)];
+  };
+  return string
+};
+
+var genArray = function(length) {
+  var array = []
+  for (var i = length; i > 0; i--) {
+    array.push(randomString(10))
+  };
+  return array
+};
 
 // DRIVER CODE
 var arr1 = ['abc', 'abcd', 'abcdef']
@@ -69,3 +105,6 @@ console.log(hasMatch(obj1, obj2)); // returns true
 obj1 = {name: "albert", age: 19, gender: "male"};
 obj2 = {gender: "female", name: "Jennifer", age: 25};
 console.log(hasMatch(obj1, obj2)); // returns false
+
+console.log("__________________________________________\n");
+console.log(genArray(5));
