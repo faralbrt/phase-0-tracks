@@ -49,7 +49,7 @@ Output: an array of strings with the length of that integer
 */
 
 
-// LOGIC
+// ----------------- LOGIC
 
 var findLargestStr = function(array) {
   var largestString = "";
@@ -90,7 +90,8 @@ var genArray = function(length) {
   return array
 };
 
-// DRIVER CODE
+// --------------- DRIVER CODE
+
 var arr1 = ['abc', 'abcd', 'abcdef']
 console.log(findLargestStr(arr1))
 
@@ -107,4 +108,10 @@ obj2 = {gender: "female", name: "Jennifer", age: 25};
 console.log(hasMatch(obj1, obj2)); // returns false
 
 console.log("__________________________________________\n");
-console.log(genArray(5));
+
+for (var i = 0; i <=10; i++) {
+  var array = genArray(4)
+  console.log(array);
+  console.log(findLargestStr(array));
+  console.log("\n")
+};
