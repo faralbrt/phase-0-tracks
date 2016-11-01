@@ -1,0 +1,32 @@
+1. 
+
+"SELECT * FROM customers;" >>>
+
+id          name          billing_city
+----------  ------------  ------------
+1           Albert Farhi  Brooklyn
+2           John Doe      Chicago
+3           Jill Sachs    Los Angeles
+
+2.
+"UPDATE customers SET billing_city = "Las Vegas" WHERE id = 3 AND billing_city = "Los Angeles"; ">>>
+
+3. "SELECT * FROM orders, customers WHERE orders.customer_id = customers.id;" >>>
+
+id          date        total       customer_id  id          name        billing_city
+----------  ----------  ----------  -----------  ----------  ----------  ------------
+1           10/15/2016  503.56      2            2           John Doe    Chicago
+2           10/20/2016  930.4       1            1           Albert Far  Brooklyn
+3           10/10/2016  150.0       3            3           Jill Sachs  Las Vegas
+4           10/11/2016  255.0       3            3           Jill Sachs  Las Vegas
+
+4.  SELECT orders.date, customers.name, orders.total, customers.billing_city FROM orders JOIN customers ON orders.customer_id = customers.id; >>
+
+date        name        total       billing_city
+----------  ----------  ----------  ------------
+10/15/2016  John Doe    503.56      Chicago
+10/20/2016  Albert Far  930.4       Brooklyn
+10/10/2016  Jill Sachs  150.0       Las Vegas
+10/11/2016  Jill Sachs  255.0       Las Vegas
+
+5. DELETE FROM orders WHERE id = 3 AND total > 5;
