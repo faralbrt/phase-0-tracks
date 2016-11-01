@@ -30,3 +30,37 @@ date        name        total       billing_city
 10/11/2016  Jill Sachs  255.0       Las Vegas
 
 5. DELETE FROM orders WHERE id = 3 AND total > 5;
+
+__________________________________________________________
+
+RELEASE 3
+
+SELECT customers.name, orders.id, orders.total, orders.date FROM customers CROSS JOIN orders;>>
+
+name          id          total       date
+------------  ----------  ----------  ----------
+Albert Farhi  1           503.56      10/15/2016
+Albert Farhi  2           930.4       10/20/2016
+Albert Farhi  4           255.0       10/11/2016
+John Doe      1           503.56      10/15/2016
+John Doe      2           930.4       10/20/2016
+John Doe      4           255.0       10/11/2016
+Jill Sachs    1           503.56      10/15/2016
+Jill Sachs    2           930.4       10/20/2016
+Jill Sachs    4           255.0       10/11/2016
+
+SELECT customers.name, orders.id, orders.total, orders.date FROM customers NATURAL JOIN orders;>>
+
+name          id          total       date
+------------  ----------  ----------  ----------
+Albert Farhi  1           503.56      10/15/2016
+John Doe      2           930.4       10/20/2016
+
+ SELECT customers.name, orders.id, orders.total, orders.date FROM customers LEFT OUTER JOIN orders WHERE customers.id = orders.customer_id;
+ 
+name          id          total       date
+------------  ----------  ----------  ----------
+Albert Farhi  2           930.4       10/20/2016
+John Doe      1           503.56      10/15/2016
+Jill Sachs    4           255.0       10/11/2016
+
