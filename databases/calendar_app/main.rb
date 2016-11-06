@@ -2,7 +2,7 @@ require 'sqlite3'
 require 'faker'
 
 # LOGIC
-db = SQLite3::Database.new("calendar.db")
+$db = SQLite3::Database.new("calendar.db")
 
 create_dates_cmd = <<-SQL
   CREATE TABLE IF NOT EXISTS dates(
@@ -24,14 +24,14 @@ create_events_cmd = <<-SQL
     )
 SQL
 
-def create_date(db, day, month, year)
-  db.execute("INSERT INTO dates (day, month, year) VALUES (?,?,?)" [day, month, year])
+def create_date(month, day, year)
+  $db.execute("INSERT INTO dates (day, month, year) VALUES (?, ?, ?)", [day, month, year])
 end
 
-def create_event(db, title, description, time, date_id)
-  db.execute("INSERT INTO events (title, description, time, date_id) VALUES (?,?,?,?)" [title, description, time, date_id])
+def create_event(title, description, time, date_id)
+  $db.execute("INSERT INTO events (title, description, time, date_id) VALUES (?,?,?,?)", [title, description, time, date_id])
 end
 
 # DRIVER CODE
-db.execute(create_dates_cmd)
-db.execute(create_events_cmd)
+# db.execute(create_dates_cmd)
+# db.execute(create_events_cmd)
