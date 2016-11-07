@@ -9,7 +9,8 @@ create_dates_cmd = <<-SQL
       id INTEGER PRIMARY KEY,
       day INT,
       month INT,
-      year INT
+      year INT,
+      full_date VARCHAR(255)
       )
 SQL
 
@@ -18,14 +19,14 @@ create_events_cmd = <<-SQL
     id INTEGER PRIMARY KEY,
     title VARCHAR(255),
     description VARCHAR(255),
-    time INT,
+    time VARCHAR(255),
     date_id INT,
     FOREIGN KEY (date_id) REFERENCES dates(id)
     )
 SQL
 
-def create_date(month, day, year)
-  $db.execute("INSERT INTO dates (day, month, year) VALUES (?, ?, ?)", [day, month, year])
+def create_date(month, day, year, full_date)
+  $db.execute("INSERT INTO dates (day, month, year, full_date) VALUES (?, ?, ?, ?)", [day, month, year, full_date])
 end
 
 def create_event(title, description, time, date_id)
@@ -33,5 +34,5 @@ def create_event(title, description, time, date_id)
 end
 
 # DRIVER CODE
-# db.execute(create_dates_cmd)
-# db.execute(create_events_cmd)
+$db.execute(create_dates_cmd)
+$db.execute(create_events_cmd)
