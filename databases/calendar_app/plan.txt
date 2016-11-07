@@ -5,8 +5,8 @@ FEATURES:
 2. View an event by day - done
 3. View events for the month - done
 4. Delete an event by its id - done
-5. Modify an event by its id
-6. create a command-line interface for the user to perform these actions.
+5. Modify an event by its id - done
+6. create a command-line interface for the user to perform these actions. - done
 
 
 BONUS FEATURES:

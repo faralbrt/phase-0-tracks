@@ -44,6 +44,12 @@ end
 def delete_event(event_id)
   $db.execute("DELETE FROM events WHERE id = ?", [event_id])
 end
+
+def modify_event(event_id, edits_hash)
+  edits_hash.each do |column, new_value|
+    $db.execute("UPDATE events SET '#{column}'= '#{new_value}' WHERE id =?", [event_id])
+  end
+end
 # DRIVER CODE
 $db.execute(create_dates_cmd)
 $db.execute(create_events_cmd)

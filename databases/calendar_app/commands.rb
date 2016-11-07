@@ -16,13 +16,15 @@ def command_processor(user_input)
     ui_view_by_month
   when "delete"
     ui_delete_event
+  when "modify"
+    ui_modify_event
   else
     puts "#{user_input} is not a command. type 'help' to see a list of commands"
   end
 end
 
 def list_available_commands
-  puts "\nCommands: \n 'create' \n 'view-day' \n 'view-month'\n 'delete'"
+  puts "\nCommands: \n 'create' \n 'view-day' \n 'view-month'\n 'delete'\n 'modify'"
 end
 
 def ui_create_event
@@ -90,3 +92,23 @@ def ui_delete_event
   delete_event(gets.chomp.to_i)
   puts "The event has been deleted."
 end
+
+def ui_modify_event
+  puts "Enter the ID:"
+  id = gets.chomp
+  edits = {}
+  loop do
+    puts "Enter the name of the column, or 'q' to quit:"
+    column = gets.chomp
+    break if column == 'q'
+    puts "New Data:"
+    if column == "time"
+      edits[column] = time_converter(gets.chomp)
+    else
+      edits[column] = gets.chomp
+    end
+  end
+  modify_event(id, edits)
+end
+
+# command_processor(gets.chomp)
