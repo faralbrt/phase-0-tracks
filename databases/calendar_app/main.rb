@@ -1,5 +1,6 @@
 require 'sqlite3'
 require 'faker'
+require_relative 'commands'
 
 # LOGIC
 $db = SQLite3::Database.new("calendar.db")
@@ -54,6 +55,10 @@ end
 $db.execute(create_dates_cmd)
 $db.execute(create_events_cmd)
 
-# puts "Welcome to evento!, the app that allows you to store events onto a calendar"
-# puts "Please type in a command, or 'help' to see a list of commands:"
-# enter the method to process user input(maybe add in a loop)
+puts "Welcome to evento!, the app that allows you to store events onto a calendar"
+loop do
+  puts "Please type in a command, or 'help' to see a list of commands:"
+  command = gets.chomp
+  break if command == 'exit'
+  command_processor(command)
+end

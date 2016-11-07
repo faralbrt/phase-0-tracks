@@ -1,7 +1,6 @@
 # process user input into commands.
 # Available Commands:
 # - create(creates event)
-require_relative 'main'
 
 # LOGIC
 def command_processor(user_input)
@@ -24,7 +23,7 @@ def command_processor(user_input)
 end
 
 def list_available_commands
-  puts "\nCommands: \n 'create' \n 'view-day' \n 'view-month'\n 'delete'\n 'modify'"
+  puts "\nCommands: \n 'create' \n 'view-day' \n 'view-month'\n 'delete'\n 'modify'\n 'exit'"
 end
 
 def ui_create_event
@@ -110,5 +109,3 @@ def ui_modify_event
   end
   modify_event(id, edits)
 end
-
-# command_processor(gets.chomp)
