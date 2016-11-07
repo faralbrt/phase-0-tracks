@@ -12,13 +12,15 @@ def command_processor(user_input)
     ui_create_event
   when "view-day"
     ui_view_by_day
+  when "view-month"
+    ui_view_by_month
   else
     puts "#{user_input} is not a command. type 'help' to see a list of commands"
   end
 end
 
 def list_available_commands
-  puts "\nCommands: \n 'create' \n 'view-day'"
+  puts "\nCommands: \n 'create' \n 'view-day' \n 'view-month'"
 end
 
 def ui_create_event
@@ -60,6 +62,21 @@ def ui_view_by_day
       puts "Title: #{event[1].capitalize}"
       puts "Description: #{event[2]}"
       puts "\n"
+    end
+  end
+end
+
+def ui_view_by_month
+  puts "Month(MM):\n"
+  dates_arr = view_by_month(gets.chomp.to_i)
+  dates_arr.each do |date|
+    puts date[0]
+    if date[2]
+      puts "Time: #{date[1].to_s.insert(-3, ':')}"
+      puts "Title: #{date[2].capitalize}"
+      puts "Description: #{date[3]}\n\n"
+    else
+      puts "No events for the day.\n\n"
     end
   end
 end

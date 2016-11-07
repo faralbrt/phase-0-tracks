@@ -37,6 +37,10 @@ def view_by_day(date_id)
   $db.execute("SELECT time, title, description FROM events WHERE date_id= ?", [date_id])
 end
 
+def view_by_month(month)
+  $db.execute("SELECT dates.full_date, events.time, events.title, events.description FROM dates LEFT JOIN events ON dates.id = events.date_id WHERE dates.month = ?", [month])
+end
+
 # DRIVER CODE
 $db.execute(create_dates_cmd)
 $db.execute(create_events_cmd)
