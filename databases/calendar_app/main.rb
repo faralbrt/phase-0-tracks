@@ -33,6 +33,10 @@ def create_event(title, description, time, date_id)
   $db.execute("INSERT INTO events (title, description, time, date_id) VALUES (?,?,?,?)", [title, description, time, date_id])
 end
 
+def view_by_day(date_id)
+  $db.execute("SELECT time, title, description FROM events WHERE date_id= ?", [date_id])
+end
+
 # DRIVER CODE
 $db.execute(create_dates_cmd)
 $db.execute(create_events_cmd)

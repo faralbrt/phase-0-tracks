@@ -1,8 +1,8 @@
 GOAL - create a program in which a user can enter events and look them up later.
 
 FEATURES:
-1. Create an event
-2. View an event by day
+1. Create an event - done
+2. View an event by day - done
 3. View events for the month
 4. View events for the upcoming week(must know what day it is from the computer)
 5. Delete an event by its id

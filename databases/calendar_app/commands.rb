@@ -2,14 +2,23 @@
 # Available Commands:
 # - create(creates event)
 require_relative 'main'
+
 # LOGIC
 def command_processor(user_input)
   case user_input.downcase
+  when "help"
+    list_available_commands
   when "create"
     ui_create_event
+  when "view-day"
+    ui_view_by_day
   else
     puts "#{user_input} is not a command. type 'help' to see a list of commands"
   end
+end
+
+def list_available_commands
+  puts "\nCommands: \n 'create' \n 'view-day'"
 end
 
 def ui_create_event
@@ -37,4 +46,20 @@ end
 def time_converter(time_string)
   time_int = time_string.delete!(":").to_i
   return time_int
+end
+
+def ui_view_by_day
+  puts "Date(MM-DD-YYYY):"
+  events_arr = view_by_day(date_converter(gets.chomp))
+  puts "\n"
+  if events_arr == []
+    puts "No events for the day."
+  else
+    events_arr.each do |event|
+      puts "Time: #{event[0].to_s.insert(-3, ':')}"
+      puts "Title: #{event[1].capitalize}"
+      puts "Description: #{event[2]}"
+      puts "\n"
+    end
+  end
 end
