@@ -14,13 +14,15 @@ def command_processor(user_input)
     ui_view_by_day
   when "view-month"
     ui_view_by_month
+  when "delete"
+    ui_delete_event
   else
     puts "#{user_input} is not a command. type 'help' to see a list of commands"
   end
 end
 
 def list_available_commands
-  puts "\nCommands: \n 'create' \n 'view-day' \n 'view-month'"
+  puts "\nCommands: \n 'create' \n 'view-day' \n 'view-month'\n 'delete'"
 end
 
 def ui_create_event
@@ -58,6 +60,7 @@ def ui_view_by_day
     puts "No events for the day."
   else
     events_arr.each do |event|
+      puts "ID: #{event[3]}"
       puts "Time: #{event[0].to_s.insert(-3, ':')}"
       puts "Title: #{event[1].capitalize}"
       puts "Description: #{event[2]}"
@@ -72,6 +75,7 @@ def ui_view_by_month
   dates_arr.each do |date|
     puts date[0]
     if date[2]
+      puts "ID: #{date[4]}"
       puts "Time: #{date[1].to_s.insert(-3, ':')}"
       puts "Title: #{date[2].capitalize}"
       puts "Description: #{date[3]}\n\n"
@@ -79,4 +83,10 @@ def ui_view_by_month
       puts "No events for the day.\n\n"
     end
   end
+end
+
+def ui_delete_event
+  puts "Enter the ID:"
+  delete_event(gets.chomp.to_i)
+  puts "The event has been deleted."
 end

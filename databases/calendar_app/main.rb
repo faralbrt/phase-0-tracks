@@ -34,13 +34,16 @@ def create_event(title, description, time, date_id)
 end
 
 def view_by_day(date_id)
-  $db.execute("SELECT time, title, description FROM events WHERE date_id= ?", [date_id])
+  $db.execute("SELECT time, title, description, id FROM events WHERE date_id= ?", [date_id])
 end
 
 def view_by_month(month)
-  $db.execute("SELECT dates.full_date, events.time, events.title, events.description FROM dates LEFT JOIN events ON dates.id = events.date_id WHERE dates.month = ?", [month])
+  $db.execute("SELECT dates.full_date, events.time, events.title, events.description, events.id FROM dates LEFT JOIN events ON dates.id = events.date_id WHERE dates.month = ?", [month])
 end
 
+def delete_event(event_id)
+  $db.execute("DELETE FROM events WHERE id = ?", [event_id])
+end
 # DRIVER CODE
 $db.execute(create_dates_cmd)
 $db.execute(create_events_cmd)
