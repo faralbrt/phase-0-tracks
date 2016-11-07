@@ -36,3 +36,7 @@ end
 # DRIVER CODE
 $db.execute(create_dates_cmd)
 $db.execute(create_events_cmd)
+
+# puts "Welcome to evento!, the app that allows you to store events onto a calendar"
+# puts "Please type in a command, or 'help' to see a list of commands:"
+# enter the method to process user input(maybe add in a loop)

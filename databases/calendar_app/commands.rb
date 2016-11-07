@@ -1,7 +1,7 @@
 # process user input into commands.
 # Available Commands:
 # - create(creates event)
-
+require_relative 'main'
 # LOGIC
 def command_processor(user_input)
   case user_input.downcase
@@ -21,13 +21,13 @@ def ui_create_event
   date_id = date_converter(gets.chomp)
   puts "Time:(HH:MM)"
   time = time_converter(gets.chomp)
-  
+  create_event(title, description, time, date_id)
 end
 
 def date_converter(date_string)
-  date_id = nil
-  if date_id
-    return date_id
+  date_arr = $db.execute('SELECT id, full_date FROM dates WHERE full_date= ?', [date_string])[0]
+  if date_arr
+    return date_arr[0]
   else
     puts "error in the date format"
     return nil
@@ -35,11 +35,6 @@ def date_converter(date_string)
 end
 
 def time_converter(time_string)
-  time_int = nil
-  if time_int
-    return time_int
-  else
-    puts 'error in the time format'
-    return nil
-  end
+  time_int = time_string.delete!(":").to_i
+  return time_int
 end
