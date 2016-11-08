@@ -21,3 +21,9 @@ form.onfocus = function() {
   node.appendChild(textnode);
   document.body.appendChild(node);
 };
+
+var button = document.getElementById("button-reveal")
+button.onclick = function() {
+  var gif = document.getElementById("birthday-gif")
+  gif.style.display = "block";
+}
