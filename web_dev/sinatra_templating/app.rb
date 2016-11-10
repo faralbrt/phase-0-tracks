@@ -1,6 +1,7 @@
 # require gems
 require 'sinatra'
 require 'sqlite3'
+require 'sinatra/reloader'
 
 set :public_folder, File.dirname(__FILE__) + '/static'
 
@@ -24,4 +25,13 @@ post '/students' do
   redirect '/'
 end
 
+get '/students/delete' do
+  erb :delete_student
+end
+
+post '/students/delete' do
+  student_id = params['student_id']
+  db.execute("DELETE FROM students WHERE id=?", [student_id])
+  redirect '/students/delete'
+end
 # add static resources
